@@ -1,0 +1,16 @@
+action (ReturnRestaurant) {
+  type(Search)
+  collect {
+    input (restaurant) {
+      type (Restaurant)
+      min (Required) max (One)
+      prompt-behavior (AlwaysSelection)
+      default-init{
+        intent{
+          goal:PickLocation
+        }
+      }
+    }
+  }
+  output (Result)
+}

@@ -1,0 +1,34 @@
+// Ref(https://bixbydevelopers.com/dev/docs/dev-guide/developers/building-views.layouts)
+// Ref(https://bixbydevelopers.com/dev/docs/reference/type/layout)
+layout {
+  match: SelectedRestaurant (info)
+  mode (Details)
+  
+  content {
+    section{
+      content{
+        cell-card {
+          slot2 {
+              content {
+                primary ("#{value(info.candidate.name)}")
+              }
+            }
+        }
+        input-cell {
+            label {
+                template ("수정하기")
+            }
+            value {
+                template ("다른 가게로 변경이 가능합니다.")
+            }
+            on-click {
+                intent {
+                  goal: EditRestaurant
+                  value:EditedRestaurant$expr(info)
+                }
+            }
+        }
+      }
+    }
+  }
+}

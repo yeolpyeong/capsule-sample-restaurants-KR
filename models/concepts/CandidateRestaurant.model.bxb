@@ -1,0 +1,11 @@
+structure (CandidateRestaurant) {
+   property (name) {
+    type (RestaurantName)
+    min (Required) max (One)
+  }
+  
+   property (note) {
+    type (core.Name)
+    min (Optional) max (One)
+  }
+}

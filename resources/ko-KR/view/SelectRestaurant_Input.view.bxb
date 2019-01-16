@@ -1,0 +1,20 @@
+input-view {
+  match: CandidateRestaurant(this)
+
+  message{
+    template ("음식점을 선택해주세요.")
+  }
+
+  render {
+    selection-of (this) {
+      where-each (one) {
+
+        layout-macro (selectedRestaurant) {
+          param (info) {
+            expression (one)
+          }
+        }
+      }
+    }
+  } 
+}

@@ -1,0 +1,13 @@
+action (EditRestaurant) {
+  type(Constructor)
+  collect {
+    input (selection) {
+      type (EditedRestaurant)
+      min (Required) max (One)
+      
+      //selection learning을 사용하지 않고 항상 사용자로부터 선택을 받도록 합니다. (https://bixbydevelopers.com/dev/docs/reference/type/action.collect.input.prompt-behavior)
+      prompt-behavior (AlwaysSelection)
+    }
+  }
+  output (SelectedRestaurant)
+}

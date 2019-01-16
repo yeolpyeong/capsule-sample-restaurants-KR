@@ -1,0 +1,11 @@
+structure (Restaurant) {
+  property (candidate) {
+    type (CandidateRestaurant)
+    min (Required) max (One)
+  }
+  
+  property (location) {
+    type (Location)
+    min (Required) max (One)
+  }
+}

@@ -1,0 +1,36 @@
+// Ref(https://bixbydevelopers.com/dev/docs/dev-guide/developers/building-views.layout-macros)
+// Ref(https://bixbydevelopers.com/dev/docs/reference/type/layout-macro-def.content)
+layout-macro-def (restaurantInfo) {
+  params {
+    param (info) {
+      type (Result)
+      min (Required) max (One)
+    }
+  }
+  content {
+    title-area {
+      slot1 {
+        text {
+          style (Title_S)
+          value ("#{value(info.restaurant.candidate.name)}")
+        }
+      }
+      slot2 {
+        single-line {
+          text {
+            style (Title_XS)
+            value ("위치: #{value(info.restaurant.location.location)}")
+          }
+        }
+      }
+      slot3 {
+        single-line {
+          text {
+            style (Detail_M_Soft)
+            value ("[메모: #{value(info.restaurant.candidate.note)}]")
+          }
+        }
+      }
+    }
+  }
+}

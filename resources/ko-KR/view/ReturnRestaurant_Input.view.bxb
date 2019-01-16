@@ -1,0 +1,19 @@
+input-view {
+  match: Restaurant(this)
+
+  message{
+    template ("원하시는 것을 선택해주세요.")
+  }
+
+  render {
+    selection-of (this) {
+      where-each (one) {
+        layout-macro (restaurantInfos) {
+          param (info) {
+            expression (one)
+          }
+        }
+      }
+    }
+  } 
+}

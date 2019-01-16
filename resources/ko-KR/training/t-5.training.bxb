@@ -1,0 +1,4 @@
+train (t-5uaqyzwlw15howuhyp1yvjh8d) {
+  utterance ([g:Result] 주변 식당 찾아줘)
+  plan (Y2BkkCpOzC0uzUvXK0otLkksLUrMKynWC0otLs0pYQABRhABAA==)
+}

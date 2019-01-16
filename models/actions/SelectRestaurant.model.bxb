@@ -1,0 +1,11 @@
+action (SelectRestaurant) {
+  type(Search)
+  collect {
+    input (candidate) {
+      type (CandidateRestaurant)
+      min (Required) max (One)
+      prompt-behavior (AlwaysSelection)
+    }
+  }
+  output (SelectedRestaurant)
+}
