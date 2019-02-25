@@ -1,25 +1,6 @@
-endpoints {
-  authorization {
-    none
-  }
-  
+endpoints {  
   // action과 그에 맞는 자바스크립트를 매핑합니다.
   action-endpoints {
-    action-endpoint (EditRestaurant) {
-      accepted-inputs (selection)
-      local-endpoint (editRestaurant.js)
-    }
-    
-    action-endpoint (ReturnRestaurant) {
-      accepted-inputs (restaurant)
-      local-endpoint (returnRestaurant.js)
-    }
-    
-    action-endpoint (SelectRestaurant) {
-      accepted-inputs (candidate)
-      local-endpoint (selectRestaurant.js)
-    }
-
     action-endpoint (MakeCandidateRestaurant) {
       accepted-inputs ()
       local-endpoint (makeCandidateRestaurant.js)

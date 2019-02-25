@@ -12,5 +12,17 @@ action (ReturnRestaurant) {
       }
     }
   }
-  output (Result)
+  output (Result){
+    evaluate{
+      Result{
+        restaurant: Restaurant{
+          candidate: CandidateRestaurant{
+            name: $expr(restaurant.candidate.name)
+            note: $expr(restaurant.candidate.note) 
+          }
+          location: $expr(restaurant.location)
+        }
+      }
+    }
+  }
 }
