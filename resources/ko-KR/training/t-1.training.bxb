@@ -1,0 +1,5 @@
+train (t-1xkj6j6fjpldqvz7yal3c4lm4) {
+  utterance ("[g:Restaurant] (주변)[v:Near:Nearby] 맛집 보여줘")
+  plan (Y2BmkEutSMwtyEnVK0otLkksLUrMKynWC4KzGVSxybunlkCUlAC5nnlp+QwS2JT5pSYWMTAxMAIxA5BkZAABJggGAA==)
+  last-modified (1554431397497)
+}

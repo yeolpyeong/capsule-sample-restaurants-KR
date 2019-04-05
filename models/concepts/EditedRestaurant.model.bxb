@@ -1,6 +1,0 @@
-structure (EditedRestaurant) {
-  property (candidate) {
-    type (CandidateRestaurant)
-    min (Required) max (One)
-  }
-}

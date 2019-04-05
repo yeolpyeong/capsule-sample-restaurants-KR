@@ -1,6 +1,0 @@
-structure (Result) {
-  property (restaurant) {
-    type (Restaurant)
-    min (Required) max (One)
-  }
-}

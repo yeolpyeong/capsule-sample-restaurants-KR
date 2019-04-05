@@ -1,0 +1,37 @@
+action (GetRestautantInfo) {
+  description (맛집의 데이터를 가져옵니다. 전체 맛집 리스트 또는 주변의 맛집 리스트를 가져올 수 있습니다) 
+  type(Search)
+  
+  collect {
+    input (near) {
+      type (Near)
+      min (Optional) max (One)
+    }
+    
+    computed-input (point){
+      type (Point)
+      min (Optional) max (One)
+      compute{
+        if(exists(near)){
+          // 사용자의 위치를 가져오기 위해서는 동의가 필요
+          // capsule.bxb의 'user-profile-access' 등록
+          // (https://bixbydevelopers.com/dev/docs/reference/type/capsule.permissions)
+          intent{
+            goal: Point
+            route: geo.CurrentLocation
+          }         
+        }
+      }
+    }
+  }
+  
+  output (Restaurant){
+    on-empty{
+      halt{
+        dialog{
+          template ("현재 주변에 검색되는 맛집이 없습니다")
+        }
+      }
+    }
+  }
+}

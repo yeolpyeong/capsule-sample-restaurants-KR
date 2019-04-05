@@ -1,4 +1,0 @@
-action (MakeCandidateRestaurant) {
-  type(Constructor)
-  output (CandidateRestaurant)
-}

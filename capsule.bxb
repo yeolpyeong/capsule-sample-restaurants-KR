@@ -7,9 +7,18 @@ capsule {
     target (bixby-mobile-en-US){enabled (false)}
   }
   
+  runtime-flags{
+    support-halt-effect-in-computed-inputs
+  }
+  
+  permissions{
+    user-profile-access
+  }
+  
   capsule-imports {
     import (viv.entity) { version(3.14.1) as (entity) }
     import (viv.core){ as (core) version-from (entity)}
     import (viv.common) { as (common) version-from (entity) }
+    import (viv.geo) { as (geo) version-from (entity) }
   }
 }

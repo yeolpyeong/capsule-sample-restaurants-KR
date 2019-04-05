@@ -1,0 +1,12 @@
+description {
+  displayName (맛집검색 캡슐)
+  companyName (맛집검색 캡슐)
+  iconUrl (/img/bixby_launcher.png)
+  description ("간단한 맛집 검색 캡슐입니다")
+  websiteUrl (https://github.com/bixbydevelopers/capsule-sample-restaurants-KR)
+  termsUrl (https://github.com/bixbydevelopers/capsule-sample-restaurants-KR/blob/master/LICENSE)
+  dispatch-name (맛집검색 캡슐)
+  dispatch-aliases {
+    alias (맛집검색)
+  }
+}

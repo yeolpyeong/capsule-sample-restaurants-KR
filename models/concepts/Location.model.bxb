@@ -1,6 +1,2 @@
-structure (Location) {
-  property (location) {
-    type (core.Text)
-    min (Required) max (One)
-  }
+text (Location) {
 }

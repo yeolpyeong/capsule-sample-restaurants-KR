@@ -1,14 +1,9 @@
 endpoints {  
-  // action과 그에 맞는 자바스크립트를 매핑합니다.
+  // action과 그에 맞는 자바스크립트를 매핑
   action-endpoints {
-    action-endpoint (MakeCandidateRestaurant) {
-      accepted-inputs ()
-      local-endpoint (makeCandidateRestaurant.js)
-    }
-    
-    action-endpoint (PickLocation) {
-      accepted-inputs (selection)
-      local-endpoint (pickLocation.js)
+    action-endpoint (GetRestautantInfo) {
+      accepted-inputs (near, point)
+      local-endpoint (GetRestautantInfo.js)
     }
   }
 }
