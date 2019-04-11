@@ -6,7 +6,7 @@
 
 ## Overview
 
-이 캡슐은 간단한 맛집 검색 캡슐입니다. 기본적인 Bixby View에 대한 사용법을 알 수 있습니다.
+이 캡슐은 간단한 맛집 검색 캡슐입니다. 기본적인 Bixby View, Geo Capsule, Self Capsule에 대한 사용법을 알 수 있습니다.
 
 ## Example flow
 

@@ -3,6 +3,17 @@ action (GetRestautantInfo) {
   type(Search)
   
   collect {
+    input (self) {
+      type (self.Self)
+      min (Required) max (One)
+      default-init{
+        intent {
+          goal: self.Self
+          route: self.GetSelfFromPDSS
+        }
+      }
+    }
+    
     input (near) {
       type (Near)
       min (Optional) max (One)

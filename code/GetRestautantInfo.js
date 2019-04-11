@@ -1,4 +1,4 @@
-// Ref(https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula)
+// 참조 (https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula)
 function getDistance(lat1,lon1,lat2,lon2) {
   const R = 6371; // Radius of the earth in km
   const dLat = deg2rad(lat2-lat1);
@@ -18,7 +18,7 @@ function deg2rad(deg) {
   return deg * (Math.PI/180)
 }
 
-module.exports.function = function getRestautantInfo (near, point) {
+module.exports.function = function getRestautantInfo (near, point, self) {
   const dummyData = require("./data/restaurants.js");
   const console = require('console');
   
@@ -35,13 +35,21 @@ module.exports.function = function getRestautantInfo (near, point) {
                              dummyData[i].point.point.latitude, dummyData[i].point.point.longitude);      
       console.log(distance);
       
-      if(distance < 2){
+      if(distance < 10){        
+        if(self.nameInfo.nickName){
+          dummyData[i].username = self.nameInfo.nickName;
+        }else{
+          dummyData[i].username = self.nameInfo.structuredName;
+        }        
+        dummyData[i].flag = true;
         result.push(dummyData[i]);
-      }     
+      }   
     }
-    
-  }else{
-    result = dummyData;
+   
+  }else{    
+    for(let i = 0; i < dummyData.length; i++){
+      result.push(dummyData[i]);
+    }
   }
   
   return result;
