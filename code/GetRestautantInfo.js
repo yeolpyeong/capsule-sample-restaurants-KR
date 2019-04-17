@@ -22,8 +22,9 @@ module.exports.function = function getRestautantInfo (near, point, self) {
   const dummyData = require("./data/restaurants.js");
   const console = require('console');
   
-  console.log(near);
-  console.log(point);
+  // console.log(near);
+  // console.log(point);
+  // console.log(self);
   
   let result = [];
   
@@ -33,14 +34,18 @@ module.exports.function = function getRestautantInfo (near, point, self) {
     for(let i = 0; i < dummyData.length; i++){
       distance = getDistance(point.point.latitude, point.point.longitude,
                              dummyData[i].point.point.latitude, dummyData[i].point.point.longitude);      
-      console.log(distance);
       
-      if(distance < 10){        
-        if(self.nameInfo.nickName){
-          dummyData[i].username = self.nameInfo.nickName;
+      if(distance < 2){
+        if(self.nameInfo != undefined){
+          if(self.nameInfo.nickName){
+            dummyData[i].username = self.nameInfo.nickName;
+          }else{
+            dummyData[i].username = self.nameInfo.structuredName;
+          }  
         }else{
-          dummyData[i].username = self.nameInfo.structuredName;
-        }        
+          dummyData[i].username = '사용자';
+        }
+              
         dummyData[i].flag = true;
         result.push(dummyData[i]);
       }   
